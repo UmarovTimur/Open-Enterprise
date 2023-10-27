@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//emailmatrix.ru// Event creation tool
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Europe/Moscow
+LAST-MODIFIED:20221029T021030Z
+TZURL:http://tzurl.org/zoneinfo-outlook/Europe/Moscow
+X-LIC-LOCATION:Europe/Moscow
+BEGIN:STANDARD
+TZNAME:MSK
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+DTSTART:19700101T000000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20230829T084455Z
+DTSTART;TZID="Europe/Moscow":20230921T100000
+DTEND;TZID="Europe/Moscow":20230921T180000
+SUMMARY:Конференция «SMARTDEV 2023» 21 сентября
+URL:https://www.smartdev.ru/
+DESCRIPTION:Приглашаем Вас принять участие в работе Конференции "Smartdev 2023" в формате онлайн! Для участия, пожалуйста, перейдите на сайт мероприятия в день проведения Конференции (21 сентября).\n\n https://www.smartdev.ru/
+LOCATION:
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
