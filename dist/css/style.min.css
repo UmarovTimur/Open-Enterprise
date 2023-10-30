@@ -1,0 +1,495 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:regular,500,600,700,800");
+@font-face {
+  font-family: "Bely Display";
+  font-display: swap;
+  src: url("../fonts/Bely-Display-W00-Regular.woff2") format("woff2"), url("../fonts/Bely-Display-W00-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "novel";
+  font-display: swap;
+  src: url("../fonts/novel-mono-pro-light.woff2") format("woff2"), url("../fonts/novel-mono-pro-light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "novel";
+  font-display: swap;
+  src: url("../fonts/novel-mono-pro-regular.woff2") format("woff2"), url("../fonts/novel-mono-pro-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "novel";
+  font-display: swap;
+  src: url("../fonts/novel-mono-pro-semibold.woff2") format("woff2"), url("../fonts/novel-mono-pro-semibold.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  font-display: swap;
+  src: url("../fonts/proximanova_black.woff2") format("woff2"), url("../fonts/proximanova_black.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  font-display: swap;
+  src: url("../fonts/proximanova_bold.woff2") format("woff2"), url("../fonts/proximanova_bold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  font-display: swap;
+  src: url("../fonts/proximanova_light.woff2") format("woff2"), url("../fonts/proximanova_light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  font-display: swap;
+  src: url("../fonts/proximanova_extrabold.woff2") format("woff2"), url("../fonts/proximanova_extrabold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  font-display: swap;
+  src: url("../fonts/proximanova_regular.woff2") format("woff2"), url("../fonts/proximanova_regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  font-display: swap;
+  src: url("../fonts/proximanova_semibold.woff2") format("woff2"), url("../fonts/proximanova_regular.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  line-height: 1;
+  font-family: "Proxima Nova";
+  font-size: 1rem;
+  color: var(--black, #303031);
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+input,
+button,
+textarea {
+  font-family: "Proxima Nova";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  transition: color 0.3s ease 0s;
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  filter: blur(0.4px);
+}
+.wrapper > main {
+  flex: 1 1 auto;
+}
+.wrapper > * {
+  min-width: 0;
+}
+
+*::selection {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+[class*=__container] {
+  max-width: 83rem;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+:root {
+  --black: #303031;
+  --gray: #66645E;
+  --green: #71A894;
+  --lightGold: #F3F0EA;
+  --white: #FFFFFF;
+  --yellow: #F5C64F;
+}
+
+.header {
+  padding: 40px 0px;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 47.99875em) {
+  .header__logo {
+    margin-right: 5px;
+  }
+}
+.header__logo > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+@media (max-width: 61.99875em) {
+  .header__menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    height: 100vh;
+    padding: 15px;
+    max-width: 100vw;
+    background-color: var(--black);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 29.99875em) {
+  .header__menu {
+    width: 100vw;
+  }
+}
+.header__menu-tab {
+  position: relative;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 61.99875em) {
+  .header__menu-tab {
+    display: none;
+  }
+}
+@media (min-width: 20em) and (max-width: 62em) {
+  .header__menu-tab {
+    margin-bottom: calc(3.125rem + 1.875 * (((100vw - 20rem)) / ((42))));
+  }
+}
+@media (max-width: 20em) {
+  .header__menu-tab {
+    margin-bottom: 3.125rem;
+  }
+}
+.header__menu-tab::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-width: 100%;
+  height: 1px;
+  background-color: var(--white);
+  opacity: 0.5;
+}
+.header__menu-mobile-title {
+  color: var(--White, var(--white-100, #FFF));
+  font-family: "novel";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 216.667% */
+  opacity: 0.8;
+}
+.header__menu-list {
+  display: flex;
+  column-gap: 40px;
+}
+@media (min-width: 84.875em) {
+  .header__menu-list {
+    column-gap: 2.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 84.875em) {
+  .header__menu-list {
+    column-gap: calc(0.0625rem + 2.4375 * (((100vw - 20rem)) / ((64.875))));
+  }
+}
+@media (max-width: 20em) {
+  .header__menu-list {
+    column-gap: 0.0625rem;
+  }
+}
+@media (max-width: 61.99875em) {
+  .header__menu-list {
+    flex-direction: column;
+    column-gap: 0;
+    row-gap: 10px;
+  }
+}
+.header__menu-link {
+  color: var(--black, #303031);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.4px;
+}
+.header__menu-link._active {
+  color: var(--green, #71A894);
+  font-weight: 600;
+}
+.header__menu-link:hover {
+  opacity: 0.7;
+}
+@media (max-width: 61.99875em) {
+  .header__menu-link {
+    color: var(--white);
+    font-size: 30px;
+  }
+}
+
+.icon-menu {
+  display: none;
+}
+@media (max-width: 61.99875em) {
+  .icon-menu {
+    display: block;
+    position: relative;
+    width: 1.875rem;
+    height: 1.125rem;
+    cursor: pointer;
+    z-index: 5;
+  }
+  .icon-menu span, .icon-menu::before, .icon-menu::after {
+    content: "";
+    transition: all 0.3s ease 0s;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 0.125rem;
+    background-color: #000;
+  }
+  .icon-menu::before {
+    top: 0;
+  }
+  .icon-menu::after {
+    bottom: 0;
+  }
+  .icon-menu span {
+    top: calc(50% - 0.0625rem);
+  }
+  .menu-open .icon-menu span {
+    width: 0;
+  }
+  .menu-open .icon-menu::before {
+    top: calc(50% - 0.0625rem);
+    transform: rotate(-45deg);
+  }
+  .menu-open .icon-menu::after {
+    bottom: calc(50% - 0.0625rem);
+    transform: rotate(45deg);
+  }
+}
+
+._icon-menu-close {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+  align-self: flex-end;
+}
+._icon-menu-close::after, ._icon-menu-close::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 2px;
+  background-color: var(--white);
+  border-radius: 2px;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+}
+._icon-menu-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+._icon-menu-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+._blob {
+  display: block;
+  position: relative;
+  width: 66px;
+  height: 66px;
+  overflow: hidden;
+  border-radius: 55% 45% 19% 81%/38% 40% 60% 62%;
+  background: #71A894;
+  background-size: 500% 100%;
+  animation: blobber 9s 0s ease infinite, spin 15s 0s linear infinite;
+}
+
+@keyframes blobber {
+  0% {
+    border-radius: 43% 77% 80% 40%/40% 40% 80% 80%;
+  }
+  20% {
+    border-radius: 28% 72% 60% 40%/56% 28% 72% 44%;
+  }
+  40% {
+    border-radius: 53% 47% 37% 63%/25% 48% 52% 75%;
+  }
+  60% {
+    border-radius: 62% 38% 82% 18%/56% 73% 27% 44%;
+  }
+  80% {
+    border-radius: 43% 77% 80% 40%/40% 40% 80% 80%;
+  }
+  100% {
+    border-radius: 43% 77% 80% 40%/40% 40% 80% 80%;
+  }
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#noise-effect {
+  position: fixed !important;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: 60;
+  pointer-events: none;
+}
+
+.first-screen__container {
+  display: flex;
+}
+.first-screen__title {
+  color: var(--Black, #303031);
+  font-family: Bely Display;
+  font-size: 64px;
+  line-height: 80px; /* 125% */
+}
+.first-screen__subtitle {
+  color: var(--Gray, #66645E);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 133.333% */
+  letter-spacing: -0.48px;
+}
+@media (min-width: 84.875em) {
+  .first-screen__subtitle {
+    margin-bottom: 3.125rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 84.875em) {
+  .first-screen__subtitle {
+    margin-bottom: calc(0.9375rem + 2.1875 * (((100vw - 20rem)) / ((64.875))));
+  }
+}
+@media (max-width: 20em) {
+  .first-screen__subtitle {
+    margin-bottom: 0.9375rem;
+  }
+}
+.first-screen__button {
+  background-color: var(--green);
+  padding: 0.8125rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 133.333% */
+  color: var(--white);
+}
+.first-screen__image {
+  flex: 1 1 100%;
+  position: relative;
+}
+.first-screen__image > img:first-child {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  right: 0;
+  z-index: 1;
+}
+.first-screen__image > svg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
