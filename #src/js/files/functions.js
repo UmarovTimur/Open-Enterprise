@@ -415,9 +415,12 @@ export function tabs() {
 export function menuInit() {
    if (document.querySelector(".icon-menu")) {
       document.addEventListener("click", function (e) {
-         if (bodyLockStatus && e.target.closest('.icon-menu')) {
+         if (bodyLockStatus && e.target.closest('._icon-menu-open')) {
             bodyLockToggle();
-            document.documentElement.classList.toggle("menu-open");
+            document.querySelector(".header__menu").classList.toggle("menu-open");
+         } else if (bodyLockStatus && e.target.closest('._icon-menu-close')) {
+            bodyLockToggle();
+            document.querySelector(".header__menu").classList.toggle("menu-open");
          }
       });
    };
