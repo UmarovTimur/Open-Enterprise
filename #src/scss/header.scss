@@ -1,7 +1,8 @@
 //====================================================================================================
 .header {
 	padding: 40px 0px;
-	@include adaptiveValue('padding-top',40,25,991,320);
+	@include adaptiveValue('padding-top',40,20,991,320);
+	@include adaptiveValue('padding-bottom',40,20,991,320);
 	
 	// @media (max-width:$tablet) {
 	// 	padding-right: 15px;
@@ -56,7 +57,7 @@
 			display: flex;
 			flex-direction: column;
 
-			transition: all .9s ease-in-out 0s;
+			transition: all .4s ease-in-out 0s;
 
 			&.menu-open {
 				transform: translate(0%,0%);
@@ -159,6 +160,8 @@
 	display: inline-block;
 	margin-bottom: 10px;
 	align-self: flex-end;
+	width: 55px;
+	height: 55px;
 	&::after, &::before {
 		content: '';
 		position: absolute;
@@ -177,6 +180,12 @@
 	}
 	&::after {
 		transform: translate(-50%,-50%) rotate(-45deg);
+	}
+
+	& > img {
+		max-width: 100%;
+		max-height: 100%;
+		border-radius: 100%;
 	}
 
 }
@@ -212,7 +221,7 @@
 		// background-color: var(--green);
 
 
-		& > svg {
+		& > img {
 			max-width: 100%;
 			max-height: 100%;
 			border-radius: 100%;

@@ -228,12 +228,8 @@ let optionsForGrained = {
    grainWidth: 1,
    grainHeight: 1 
 }
-let bgGrained = document.querySelector('#noise-effect')
-
+ 
 // grained("#noise-effect", optionsForGrained);
-
-console.log(typeof bgGrained);
-
 
 
 
