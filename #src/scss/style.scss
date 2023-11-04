@@ -29,7 +29,7 @@ $mainColor: var(--black, #303031); // Цвет шрифта по умолчан�
 // Настройки адаптивной сетки ===============================================================================================================================================================================================================================================================================================
 
 // Минимальная ширина страницы
-$minWidth: 320;
+$minWidth: 390;
 // Ширина полотна (макета)
 $maxWidth: 1440;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
@@ -83,6 +83,7 @@ body {
    display: flex;
    flex-direction: column;
    overflow: hidden;
+   background-color: #F9F9F9;
    filter: blur(.4px);
    // Прижимаем footer
    >main {
@@ -93,6 +94,9 @@ body {
    >* {
       min-width: 0;
       
+   }
+   @media screen and (max-width:$mobile) {
+      filter: blur(.25px);   
    }
 }
 
@@ -225,11 +229,10 @@ body {
 
    &__title {
       color: var(--Black, #303031);
-      font-family: Bely Display;
-      font-size: 64px;
-      line-height: 125%; /* 125% */
-      @include adaptiveValue('font-size',64,32);
-      @include adaptiveValue('margin-bottom',24,10);
+      font-family: "Bely Display";
+      line-height: 125%;
+      @include adaptiveValue('font-size',64,36);
+      @include adaptiveValue('margin-bottom',24,15);
       @media (max-width:$tablet) {
          text-align: center;
       }
@@ -240,8 +243,6 @@ body {
    &__subtitle {
       color: var(--Gray, #66645E);
       font-size: 24px;
-      font-style: normal;
-      font-weight: 400;
       line-height: 125%; /* 133.333% */
       letter-spacing: -0.48px;
       @include adaptiveValue('margin-bottom',40,15);
@@ -256,14 +257,17 @@ body {
 
    &__button {
       background-color: var(--green);
-      padding: rem(13) rem(24);
-      border-radius: rem(8);
+      padding: em(13) em(24);
+      border-radius: em(8);
       font-size: 18px;
       font-style: normal;
       font-weight: 700;
-      line-height: 24px; /* 133.333% */
+      line-height: 133%; /* 133.333% */
       color: var(--white);
       align-self: center;
+      @media screen and (max-width:$tablet) {
+         font-size: 16px;
+      }
    }
 
    // .first-screen__image
@@ -271,6 +275,7 @@ body {
    &__image {
       flex: 1 1 100%;
       position: relative;
+      margin: 0 -15px;
       // main image
       &>img:first-child {
          padding-top: 20px;
@@ -286,6 +291,8 @@ body {
       }
 
       @media (min-width:$tablet) {
+         margin: 0;
+
          &>img {
             position: absolute;
             transform: translate(-50%,-50%);
@@ -294,7 +301,7 @@ body {
          &>img:first-child {
             top: 0;
             z-index: 1;
-            max-width: 130%;
+            max-width: 120%;
          }
 
          // blob shape
@@ -306,5 +313,107 @@ body {
             z-index: 0;
          }
       }
+   }
+}
+//====================================================================================================================================================================================//
+
+.reimagining {
+
+   @include adaptiveValue('margin-bottom',160,45);
+   
+
+   // .reimagining__container
+
+   &__container {
+   }
+
+   // .reimagining__title
+
+   &__title {
+      @include adaptiveValue('margin-bottom',24,15);
+      
+      text-align: center;
+   }
+
+   // .reimagining__sub-title
+
+   &__sub-title {
+      text-align: center;
+      font-family: "Proxima Nova";
+
+      @include adaptiveValue('font-size',18,14);
+      
+
+      line-height: 144%; /* 144.444% */
+      letter-spacing: -0.36px;
+      max-width: 900px;
+      margin: 0 auto;
+   }
+
+   // .reimagining__row
+
+   &__row {
+      @include adaptiveValue('margin-top',50,20);
+      
+      display: flex;
+      column-gap: 20px;
+      @media screen and (max-width:$pc) {
+         column-gap: 15px;
+      }
+   }
+
+   // .reimagining__card
+
+   &__card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: rem(64) rem(20);
+      background-color: var(--white,#ffffff);
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.10);
+      border-radius: 8px;
+      @media screen and (min-width:$tablet) {
+         flex: 1 1 33.3%;
+      }
+      @media screen and (max-width:$pc) {
+         padding: rem(55) rem(15);
+      }
+   }
+}
+
+.reimagining-card {
+
+   // .reimagining-card__img
+
+   &__img {
+      margin-bottom: 25px;
+   }
+   
+
+   // .reimagining-card__title
+
+   &__title {
+      text-align: center;
+
+      font-size: 24px;
+      font-family: "Proxima Nova";
+      font-weight: 700;
+      line-height: 133%;
+
+      margin-bottom: 15px;
+
+      text-align: center;
+   }
+
+   // .reimagining-card__text
+
+   &__text {
+      text-align: center;
+
+      font-family: "Proxima Nova";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 144%; /* 144.444% */
    }
 }

@@ -7,3 +7,12 @@
     --white: #FFFFFF;
     --yellow: #F5C64F;
 }
+
+._title {
+    color: var(--Black, #303031);
+    font-family: "Bely Display";
+    font-size: 48px;
+    @include adaptiveValue('font-size',48,32);
+    
+    line-height: 133%; /* 133.333% */
+}
